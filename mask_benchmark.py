@@ -294,8 +294,7 @@ def main():
             writer.writerows(data)
     for filename, data in [('environment.json', environment), ('correctness.json', verification)]:
         (args.output/filename).write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
-    report = ['# Rozdíl a prahování naměřené výsledky', '',
-              'Mediány latence v ms.', '',
+    report = ['# Naměřené výsledky', '',
               '| Vstup → maska | Backend | Celek rezidentní | Celek CPU→CPU | Zrychlení CPU→CPU |',
               '|---|---|---:|---:|---:|']
     for input_type in INPUT_TYPES:
